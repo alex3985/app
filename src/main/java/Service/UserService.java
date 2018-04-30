@@ -3,6 +3,7 @@ package Service;
 
 import database.HerokuConnectionDB;
 import modules.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.lang.Class;
@@ -14,6 +15,7 @@ import java.util.LinkedList;
 
 @RestController
 public class UserService {
+    @Autowired
     HerokuConnectionDB db;
     @RequestMapping("/getUsers")
     public LinkedList<User> getAllUser() {
